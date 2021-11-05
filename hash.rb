@@ -1,4 +1,6 @@
 #{ hash }
+#{ value permits any type of data }
+#{}
 book_author = {"ruby" => "thomas", "program" => "matz"}
 p book_author["ruby"]
 book_author["way"] = "fulton"
