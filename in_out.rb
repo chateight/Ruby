@@ -59,7 +59,7 @@ warn "outed"
 puts "\n"
 puts buffer
 $stdout =STDOUT
-puts buffer         #{ Buffer is empty }
+puts buffer         #{ buffer is empty }
 #{}
 #{ char coding }
 #{}
