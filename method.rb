@@ -79,7 +79,7 @@ end
 [:a, :b, :c].enum_for(:each).map{|i|
     puts i
 }
-#{ same as above "foo" }
+#{ same as above "foo" method}
 def foo1
     return enum_for(foo bar baz) unless block_given?
     %w(foo bar baz).each do |item|
@@ -93,6 +93,7 @@ end
 #{ using Proc object }
 #{ argument &handler stores caller block as a Proc object }
 #{ so, & + call == yield }
+#{ following two examples show same meaning. }
 #{}
 class SleepyPerson
     def register_handler(&handler)
@@ -105,4 +106,22 @@ end
 john = SleepyPerson.new
 john.register_handler {|time, message| p [time, message]}
 john.wake_up!
+# using Proc instead of &
+class SleepyPerson1
+    def register_handler(handler)
+        @event_handler = handler
+    end
+    def wake_up!
+        @event_handler.call Time.now, "woke up"
+    end
+end
+handle = Proc.new {|time, message| p [time, message]} # "proc" equals to "Proc.new"
+lenon = SleepyPerson1.new
+lenon.register_handler(handle)
+lenon.wake_up!
 
+#{}
+#{ "->"" is a lambda literal }
+#{}
+add_proc = ->(a, b) { a + b }   # "->(a, b) { a + b }" equals to "lambda { |a, b| a + b }"
+p add_proc.call(1, 2)
