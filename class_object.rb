@@ -68,7 +68,7 @@ CENTRAL_REPOSITORY.register(1)      # this will be rejected by "include? target"
 CENTRAL_REPOSITORY.unregister(1)    # -> []
 #{}
 #{ module is called using "include" }
-#{ module is introduced to avoid multiple inheritance, but provide similar function to the class. }
+#{ module is introduced to avoid multiple inheritance, provide similar function to the class. }
 #{}
 class SizeMatters   # https://ruby-doc.org/core-3.1.0/Comparable.html
     include Comparable
@@ -94,4 +94,3 @@ p s4.between?(s3, s5)           # -> true
 p [ s3, s2, s5, s4, s1 ].sort   # -> [Z, YY, XXX, WWWW, VVVVV]
 p Comparable.ancestors          # -> [Comparable] : since "Comparable" is a module, not a class.
                                 # module is a function set. so it could not be instantiated.
-
