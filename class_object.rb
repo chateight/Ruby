@@ -1,6 +1,6 @@
 #{}
 #{ attr_accessor & meta class }
-#{ class method is a singular method of Class object. }
+#{ class method is a singular method of a Class object. }
 #{}
 class Duration
     def initialize(since, till)
@@ -9,9 +9,9 @@ class Duration
     end
     attr_accessor :since, :till     # attr_accessor is a meta expression generating some methods internally
 end
-class Duration  # ruby is a open class language
+class Duration  # ruby is a open class language, so you can extend the class.
     class << self       # meta class is defined as a singular class of a Class object.
-        def a_week_from(from)   # "def self.a_week_from(from)" is a class method style.
+        def a_week_from(from)   # same as "def Duration.a_week_from(from)".
             return self.new(from, from+7*24*60*60)
         end
     end
