@@ -7,9 +7,9 @@ class Duration
         @since = since
         @till = till
     end
-    attr_accessor :since, :till     # attr_accessor is a meta expression generating some methods internally
+    attr_accessor :since, :till     # attr_accessor is a meta expression generating some methods(setter, getter, et al) internally
 end
-class Duration  # ruby is a open class language, so you can extend the class.
+class Duration  # ruby is a open class language, so you can extend the original class(Duration).
     class << self       # meta class is defined as a singular class of a Class object.
         def a_week_from(from)   # same as "def Duration.a_week_from(from)".
             return self.new(from, from+7*24*60*60)
@@ -48,14 +48,14 @@ some.public_one
 #{}
 #{ singular method & singleton }
 #{}
-CENTRAL_REPOSITORY = Object.new  # "CENTRAL_REPOSITORY" is an instance of the Object class.
-                                #
-                                # if singular class difinition is needed, "class << CENTRAL_REPOSITORY" is a description.
-                                # and in case of method definition, you don't need to use a class name. i.e. "def register(target)"
+CENTRAL_REPOSITORY = Object.new         # "CENTRAL_REPOSITORY" is an instance of the Object class.
+                                        #
+                                        # if singular class difinition is needed, "class << CENTRAL_REPOSITORY" is a description.
+                                        # and in case of method definition, you don't need to use a class name. i.e. "def register(target)"
 def CENTRAL_REPOSITORY.register(target) # define the singular method(register). singular method is an instance method of the singular class.
-    @registerd_objects ||=[]    # ||=[] is a self-assignment operator ( if "@registerd_objects" is false or nil, an empty array would be defined, else nothing happens. )
+    @registerd_objects ||=[]            # ||=[] is a self-assignment operator ( if "@registerd_objects" is false or nil, an empty array would be defined, else nothing happens. )
     unless @registerd_objects.include? target
-        p @registerd_objects << target    #  -> [1], add to the last position of arrangement "@registerd_objects" 
+        p @registerd_objects << target  #  -> [1], add to the last position of arrangement "@registerd_objects" 
     end
 end
 def CENTRAL_REPOSITORY.unregister(target)   # define the singular method(unregister).
@@ -68,7 +68,7 @@ CENTRAL_REPOSITORY.register(1)      # this will be rejected by "include? target"
 CENTRAL_REPOSITORY.unregister(1)    # -> []
 #{}
 #{ module is called using "include" }
-#{ module is introduced to avoid multiple inheritance, provide similar function to the class. }
+#{ module is introduced to avoid multiple inheritance and provides similar function to the class. }
 #{}
 class SizeMatters   # https://ruby-doc.org/core-3.1.0/Comparable.html
     include Comparable

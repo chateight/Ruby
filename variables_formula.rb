@@ -1,5 +1,5 @@
 #{}
-#{ variables are only refernce to the object. }
+#{ variables are only refernce to objects. }
 #{}
 def mod(arg1)
     str = arg1
@@ -11,7 +11,7 @@ arg = "omni"
 mod(arg)
 p arg
 #{}
-#{ constant is also variables, but following redefinition causes Ruby error messages. }
+#{ constant is also variables, but following redefinition causes Ruby error message. }
 #{}
 CONS = 3
 CONS = 4
@@ -19,7 +19,7 @@ puts CONS
 # SYSTEM CONSTANT
 puts RUBY_VERSION
 # pseudo CONSTANT
-puts __LINE__
+puts __LINE__       # to show the current line number in the code
 puts __ENCODING__
 #{}
 #{ :: scope resolver }
@@ -38,19 +38,19 @@ puts B::Age
 #{ conditional operator }
 #{}
 a = false
-var = a ? "abc" : "ABC"
+var = a ? "abc" : "ABC"     # if "a" is ture then var = "abc", else var ="ABC"
 puts var
 #{}
 #{ controlled formula }
 #{}
 class Sample
     @@color = "green"
-    def color
+    def colo_ret
         return @@color
     end
 end
 sample = Sample.new
-thought = if sample.color == "green" then
+thought = if sample.colo_ret == "green" then
     "safe"
 else
     "undefined"
@@ -62,7 +62,7 @@ puts thought
 for i in [1, 3, 9, 27] do
     puts i
 end
-#{ equivalent to the above }
+#{ equivalent to the above }    # using a iterator is a common sense in Ruby
 [1, 3, 9, 27].each do |i|
     puts i
 end
@@ -99,12 +99,12 @@ rescue => another_error
     puts another_error.message
 end
 #{}
-#{ global escape which "catch/throe" clause make. }
+#{ global escape which "catch/throw" clause make. }
 #{}
 catch(:exit){ 
     loop do 
         loop do
-            throw :exit
+            throw :exit     # escape from the catch clause
         end
     end
 }
