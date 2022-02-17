@@ -10,6 +10,7 @@ end
 arg = "omni"
 mod(arg)
 p arg
+
 #{}
 #{ constant is also variables, but following redefinition causes Ruby error message. }
 #{}
@@ -21,6 +22,7 @@ puts RUBY_VERSION
 # pseudo CONSTANT
 puts __LINE__       # to show the current line number in the code
 puts __ENCODING__
+
 #{}
 #{ :: scope resolver }
 #{}
@@ -34,12 +36,14 @@ class C
     Age = 30
 end
 puts B::Age
+
 #{}
 #{ conditional operator }
 #{}
 a = false
 var = a ? "abc" : "ABC"     # if "a" is ture then var = "abc", else var ="ABC"
 puts var
+
 #{}
 #{ controlled formula }
 #{}
@@ -56,19 +60,23 @@ else
     "undefined"
 end
 puts thought
+
 #{}
 #{ for -> each replacement }
 #{}
 for i in [1, 3, 9, 27] do
     puts i
 end
+
 #{ equivalent to the above }    # using a iterator is a common sense in Ruby
 [1, 3, 9, 27].each do |i|
     puts i
 end
+
 #{ another style of loop handling }
 #{ "loop", "times" & "downto" are also typical iterator. }
 0.upto(5){|i| puts i }
+
 #{ "break", "redo" and "next" work as an interuptor. }
 str = "fdfsgfjljl"
 str.each_byte do |byte|
@@ -79,6 +87,7 @@ str.each_char do |chr|
     next if chr == "d" or chr == "j"
     printf chr + "\n"
 end
+
 #{}
 #{ exception }
 #{ $! : system variable which contains last Exception info. }
@@ -92,12 +101,14 @@ rescue => another_error
 ensure
     puts Time.now
 end
+
 #{ raise the exception }
 begin
     raise "raise the error"
 rescue => another_error
     puts another_error.message
 end
+
 #{}
 #{ global escape which "catch/throw" clause make. }
 #{}
@@ -109,3 +120,8 @@ catch(:exit){
     end
 }
 puts "quit"
+
+#
+# division and residual operator "divmod"
+cal = -7.divmod(2)      # return an array
+p cal[0], cal[1]

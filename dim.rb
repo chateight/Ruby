@@ -4,6 +4,7 @@
 acids = ["adenin", "thymine", "guanine", "cytosine"]
 signs = acids.map{|array| array[0,1]}           # map{&:some_method} : this(&:) calls some_method
 p signs
+
 #{}
 # hash
 #{}
@@ -23,6 +24,6 @@ book_to_author.each do |book, author|       # each records are accessed by each 
 end
 p book_to_author.map{|book, author| "#{book} by #{author}"     # similar to each method
 }
-#{}
+#
 p book_to_author.map.with_index{|(book, author), index|"#{index+1}. #{book}. #{author}"   # map without block returns Enumerator wrapping the iterator.
 }
