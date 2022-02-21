@@ -1,5 +1,5 @@
 #{}
-#{ spaceship operator}
+#{ spaceship operator }
 #{}
 if (10 <=> 8) == 1 then     #{ redundant, only for confirmation }
     p "large"
@@ -18,3 +18,4 @@ p Math::log(2.7182)         #{ different expression }
 20.downto(0) do |i|
     print 3[i]              #{ print out from msb to lsb, Ruby handle bit array as infinite stream }
 end
+
