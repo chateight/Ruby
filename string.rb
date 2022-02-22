@@ -10,3 +10,15 @@ str_here = <<"ES"
 ES
 p str_here      #{ -> "    here is a \"sample\" of \n    the hear document\n"}
 
+#{ partial string }
+music = <<EOS
+here come the sun.
+by beetles
+hotel calforrnia.
+eagles
+EOS
+
+music.each_char{
+    |i|
+    p music[i]
+}
