@@ -26,6 +26,7 @@ puts __ENCODING__
 #{}
 #{ :: scope resolver }
 #{}
+p "----- scope resolver -----"
 class A
     Age = 10
 end
@@ -40,6 +41,7 @@ puts B::Age
 #{}
 #{ conditional operator }
 #{}
+p "----- conditional resolver -----"
 a = false
 var = a ? "abc" : "ABC"     # if "a" is ture then var = "abc", else var ="ABC"
 puts var
@@ -47,6 +49,7 @@ puts var
 #{}
 #{ controlled formula }
 #{}
+p "----- controlled formula -----"
 class Sample
     @@color = "green"
     def colo_ret
@@ -64,6 +67,7 @@ puts thought
 #{}
 #{ for -> each replacement }
 #{}
+p "----- repeat & loop control -----"
 for i in [1, 3, 9, 27] do
     puts i
 end
@@ -92,6 +96,8 @@ end
 #{ exception }
 #{ $! : system variable which contains last Exception info. }
 #{}
+
+p "----- exception -----"
 begin
     y = 1/0
 rescue ArgumentError => error

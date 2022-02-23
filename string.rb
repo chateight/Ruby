@@ -14,11 +14,19 @@ p str_here      #{ -> "    here is a \"sample\" of \n    the hear document\n"}
 music = <<EOS
 here come the sun.
 by beetles
-hotel calforrnia.
-eagles
+hotel calfornia.
+by eagles
 EOS
 
-music.each_char{
+music["here come the sun."] = "abbey road"          #{ this changes only first found string if you want to change all of then, use gsub() function }
+music.each_line{
     |i|
-    p music[i]
+    print music[i]
 }
+
+#{ repeat strings }
+p "let's do that! "*5
+
+#{ reverse the string }
+p "let's do that! ".reverse
+
