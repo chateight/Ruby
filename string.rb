@@ -25,8 +25,20 @@ music.each_line{
 }
 
 #{ repeat strings }
+p "------ symbol operator -----"
 p "let's do that! "*5
 
 #{ reverse the string }
 p "let's do that! ".reverse
 
+#{ symbol}
+p "------ symbol is unique & light weight -----"
+str1 = "ruby"
+str2 = "ruby"   #{ different object }
+
+p str1.equal? str2
+
+sym1 = :ruby
+sym2 = :ruby    #{ same object }
+
+p sym1.equal? sym2
