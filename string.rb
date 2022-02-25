@@ -31,6 +31,11 @@ p "let's do that! "*5
 #{ reverse the string }
 p "let's do that! ".reverse
 
+#{ format string}
+p "----- format print ------"
+p sprintf("%03d", 3)
+p sprintf("%08.4f", Math::PI*10)
+
 #{ symbol}
 p "------ symbol is unique & light weight -----"
 str1 = "ruby"
