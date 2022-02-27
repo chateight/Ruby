@@ -34,7 +34,7 @@ p "let's do that! ".reverse
 #{ format string}
 p "----- format print ------"
 p sprintf("%03d", 3)
-p sprintf("%08.4f", Math::PI*10)
+p sprintf("%08.6f", Math::PI)
 
 #{ symbol}
 p "------ symbol is unique & light weight -----"
