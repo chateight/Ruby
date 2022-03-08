@@ -10,5 +10,7 @@ File.open("text.txt", 'a'){|f|
 }
 
 File.open("text.txt", 'r'){|f|
-    puts f.read
+    f.each_line do |line|
+        puts "#{f.lineno}: #{line}"
+    end
 }
